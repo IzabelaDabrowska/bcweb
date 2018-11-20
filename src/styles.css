@@ -8,21 +8,23 @@ body {
     background-image: url("../assets/main-pic.jpeg");
     background-position: bottom;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+html, body {
+    height: 100vh;
 }
 .page-content {
     display: flex;
     flex-direction: column;
 }
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
     background-color: rgba(33, 150, 243, 0.8);
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     transition: all 0.3s ease-in-out;
+    height: 104px;
 }
 .nav-logo {
     display: flex;
@@ -75,4 +77,13 @@ body {
     -ms-transform: translateY(-10px) rotate(-45deg);
     -o-transform: translateY(-10px) rotate(-45deg);
     transform: translateY(-10px) rotate(-45deg);
+}
+.main-content {
+    width: 100%;
+    height: 0;
+    background-color: rgba(33, 150, 243, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+.expanded {
+    height: calc(100vh - 104px);
 }
