@@ -134,6 +134,17 @@ html, body {
     outline: none;
     cursor: pointer;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-bar_content li:hover .plus-button {
+    background-color: rgb(93, 178, 246);
+    color: #ecf0f1;
+    transition: all 0.3s ease-in-out;
+}
+.contact-link:hover .plus-button {
+    background-color: rgb(93, 178, 246);
+    color: #ecf0f1;
+    transition: all 0.3s ease-in-out;
 }
 .menu-content {
     width: 65%;
@@ -158,4 +169,51 @@ html, body {
     font-size: 18px;
     font-weight: 700;
     margin: 0 20px 0 16px;
+}
+.positioning-template {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.template-header {
+    color: #ecf0f1;
+    font-size: 34px;
+    font-weight: 700;
+    height: 15%;
+    width: 80%;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    align-items: center;
+}
+.main-information-template {
+    height: 80%;
+    width: 80%;
+}
+.offer-template {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.offer-template button {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    width: 24%;
+    height: 43%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ecf0f1;
+    border: 1px solid #ecf0f1;
+    margin-right: 1%;
+    transition: all 0.3s ease-in-out;
+}
+.offer-template button:hover {
+    background-color: rgba(93, 178, 246, 0.8);
+    transition: all 0.3s ease-in-out;
 }
