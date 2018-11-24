@@ -217,3 +217,27 @@ html, body {
     background-color: rgba(93, 178, 246, 0.8);
     transition: all 0.3s ease-in-out;
 }
+.page-template {
+    display: flex;
+    flex-direction: row;
+}
+.positioning--page-template {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.page-template button {
+    outline: none;
+    color: #ecf0f1;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 20px 0 20px 0;
+    cursor: pointer;
+}
+.page-template button::after {
+    content: url(../assets/right-arrow.png);
+    margin-left: 10px;
+}
