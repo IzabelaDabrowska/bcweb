@@ -4,6 +4,9 @@ window.onload = function () {
     var mainContent = document.getElementById('main-content');
     var content = document.getElementsByClassName('menu-content')[0];
     var links = document.getElementsByClassName('link-button');
+    var searchButton = document.getElementById('search-button');
+    var searchDropdownVisible = false;
+    var dropdownElement;
 
     var homeTemplate = `
                   <div class="positioning-template">
@@ -72,7 +75,7 @@ window.onload = function () {
                   </div>
                `;
 
-	var formTemplate = `
+    var formTemplate = `
                   <div class="positioning-template">
                      <div class="template-header">Wyślij nam wiadomość</div>
                      <div class="main-information-template">
@@ -124,22 +127,44 @@ window.onload = function () {
             console.log(content);
             var template = sectionTemplateMap[event.target.id];
             content.innerHTML = template;
-			if (event.target.id === 'offer') {
-				var webPagesLink = document.getElementById('web-pages-link');
-				if (webPagesLink != null) {
-					webPagesLink.addEventListener('click', function () {
-						content.innerHTML = offerWebPages;
-					})
-				}
-			}
+            if (event.target.id === 'offer') {
+                var webPagesLink = document.getElementById('web-pages-link');
+                if (webPagesLink != null) {
+                    webPagesLink.addEventListener('click', function () {
+                        content.innerHTML = offerWebPages;
+                    })
+                }
+            }
         })
     }
 
     var contactLink = document.getElementById('contact-link');
     if (contactLink != null) {
-    	contactLink.addEventListener('click', function () {
-    		content.innerHTML = formTemplate;
-		})
-	}
+        contactLink.addEventListener('click', function () {
+            content.innerHTML = formTemplate;
+        })
+    }
 
+    searchButton.addEventListener('click', function (event) {
+        if (!searchDropdownVisible) {
+            var dropdown = document.createElement('div');
+            dropdown.classList.add('search-dropdown');
+            var dropdownInput = document.createElement('input');
+            dropdownInput.setAttribute('type', 'text');
+            var dropdownButton = document.createElement('button');
+            dropdownButton.innerText = 'Search';
+            var target = event.target;
+            var targetRect = target.getBoundingClientRect();
+            dropdown.appendChild(dropdownInput);
+            dropdown.appendChild(dropdownButton);
+            dropdown.style.top = targetRect.top + 60 + 'px';
+            dropdown.style.left = targetRect.left - 118 + 'px';
+            dropdownElement = dropdown;
+            document.body.appendChild(dropdown);
+            searchDropdownVisible = true;
+        } else {
+            searchDropdownVisible = false;
+            document.body.removeChild(dropdownElement)
+        }
+    })
 };
