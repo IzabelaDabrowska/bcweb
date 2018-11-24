@@ -241,3 +241,39 @@ html, body {
     content: url(../assets/right-arrow.png);
     margin-left: 10px;
 }
+.sending-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top:40px;
+}
+.sending-form label.text-input-label {
+	color: #ecf0f1;
+	font-size: 18px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.sending-form label.text-input-label input {
+	background-color: transparent;
+	border: 1px solid rgba(236, 240, 241, 0.50);
+	width: 80%;
+	height: 60px;
+	outline: none;
+}
+.submit-input {
+	width: 10%;
+	background-color: rgb(93, 178, 246);
+	font-size: 16px;
+	font-weight: 700;
+	color: #ecf0f1;
+	align-self: flex-end;
+	border: none;
+	border-radius: 5px;
+}
+.input-checkbox {
+	color: #ecf0f1;
+	font-size: 14px;
+	margin-top: 25px;
+}

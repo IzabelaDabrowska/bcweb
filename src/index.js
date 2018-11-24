@@ -72,6 +72,38 @@ window.onload = function () {
                   </div>
                `;
 
+	var formTemplate = `
+                  <div class="positioning-template">
+                     <div class="template-header">Wyślij nam wiadomość</div>
+                     <div class="main-information-template">
+                     	<form action="x" method="get" class="sending-form">
+                     		<label class="text-input-label">
+                     			Imię i nazwisko*
+                     			<input type="text" name="name">
+							</label>
+							<label class="text-input-label">
+                     			Adres e-mail*
+                     			<input type="email" name="email">
+							</label>
+							<label class="text-input-label">
+                     			Treść
+                     			<input type="text" name="contents">
+							</label>
+							<input class="submit-input" type="submit" value="WYŚLIJ">
+							<label class="input-checkbox">
+								<input type="checkbox" checked="checked">
+								Wyrażam zgodę na otrzymywanie od Volkswagen Group Polska sp.z.o.o. <br> z siedzibą  Poznaniu informacji handlowych za 
+								pośrednictwem środków komunikacji elektronicznej.
+							</label>
+							<label class="input-checkbox">
+								<input type="checkbox" checked="checked">
+								Wyrażam zgodę na przetważanie moich danych osobowych przez Volkswagen Group Polska sp.z.o.o. z siedzibą w Poznaniu w celach marketingowych
+							</label>
+						</form>
+					 </div>
+                  </div>
+               `;
+
     var sectionTemplateMap = {
         home: homeTemplate,
         about: aboutTemplate,
@@ -102,4 +134,12 @@ window.onload = function () {
 			}
         })
     }
+
+    var contactLink = document.getElementById('contact-link');
+    if (contactLink != null) {
+    	contactLink.addEventListener('click', function () {
+    		content.innerHTML = formTemplate;
+		})
+	}
+
 };
