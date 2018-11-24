@@ -2,7 +2,7 @@ window.onload = function () {
 
     var hamburger = document.getElementById('hamburger');
     var mainContent = document.getElementById('main-content');
-    var content = document.getElementsByClassName('menu-content');
+    var content = document.getElementsByClassName('menu-content')[0];
     var links = document.getElementsByClassName('link-button');
 
     var homeTemplate = `
@@ -22,8 +22,8 @@ window.onload = function () {
                   <div class="positioning-template">
                      <div class="template-header">Oferta</div>
                      <div class="main-information-template offer-template">
-                        <button class="change-template">Strony internetowe</button>
-                        <button>Sklepy internetowe</button>§
+                        <button id="web-pages-link">Strony internetowe</button>
+                        <button>Sklepy internetowe</button>
                         <button>Projektowanie graficzne</button>
                         <button>Druk materiałów reklamowych</button>
                         <button>Prezentacje i animacje 2D</button>
@@ -78,7 +78,7 @@ window.onload = function () {
         offer: offerTemplate,
         realizations: realizationsTemplate,
         articles: articlesTemplate,
-        contact: contactTemplate
+        contact: contactTemplate,
     };
 
     hamburger.addEventListener('click', function () {
@@ -91,7 +91,15 @@ window.onload = function () {
         link.addEventListener('click', function (event) {
             console.log(content);
             var template = sectionTemplateMap[event.target.id];
-            content[0].innerHTML = template;
+            content.innerHTML = template;
+			if (event.target.id === 'offer') {
+				var webPagesLink = document.getElementById('web-pages-link');
+				if (webPagesLink != null) {
+					webPagesLink.addEventListener('click', function () {
+						content.innerHTML = offerWebPages;
+					})
+				}
+			}
         })
     }
 };
