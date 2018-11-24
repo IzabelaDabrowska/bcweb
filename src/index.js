@@ -16,7 +16,7 @@ window.onload = function () {
                   <div class="positioning-template">
                      <div class="template-header">O Nas</div>
                      <div class="main-information-template"></div>
-                  </div>;
+                  </div>
                   `;
     var offerTemplate = `
                   <div class="positioning-template">
